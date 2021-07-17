@@ -1,29 +1,31 @@
-function addition(a,b) {
-    return a + b;
-};
-
-function subtraction(a,b) {
-    return a - b;
-};
-
-function multiplication(a,b) {
-    return a * b;
-};
-
-function division(a,b) {
-    return a / b;
-};
-
-function operate(operator, a, b) {
-    if (operator == "+") {
-        return addition(a,b);
-    } else if (operator == "-") {
-        return subtraction(a,b);
-    } else if (operator == "*") {
-        return multiplication(a,b);
-    } else if (operator == "/") {
-        return division(a,b);
-    } else {
-        return "ERROR";
-    }
-};
+calculator = {
+    addition: function(a,b){
+        return a + b;
+    },
+    
+    subtraction: function(a,b) {
+        return a - b;
+    },
+    
+    multiplication: function(a,b) {
+        return a * b;
+    },
+    
+    division: function(a,b) {
+        return a / b;
+    },
+    
+    operate: function(operator, a, b) {
+        if (operator == "+") {
+            return this.addition(a,b);
+        } else if (operator == "-") {
+            return this.subtraction(a,b);
+        } else if (operator == "*") {
+            return this.multiplication(a,b);
+        } else if (operator == "/") {
+            return this.division(a,b);
+        } else {
+            return "ERROR";
+        }
+    },
+}
