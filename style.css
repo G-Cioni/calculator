@@ -17,10 +17,10 @@ body {
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas: "display display display display"
                          "allClear allClear plusMinus division"
-                         "7 8 9 multiplication"
-                         "4 5 6 subtraction"
-                         "1 2 3 addition"
-                         "0 0 point equals"
+                         "seve  eight nine multiplication"
+                         "four five six subtraction"
+                         "one two three addition"
+                         "zero0 zero0 point equals"
 };
 
 
@@ -28,76 +28,76 @@ body {
     grid-area: display;
 };
 
-# allClear{
+#allClear{
     grid-area: allClear;
 };
 
-# plusMinus{
+#plusMinus{
     grid-area: plusMinus;
 };
 
-# division{
+#division{
     grid-area: division;
 };
 
-# multiplication{
+#multiplication{
     grid-area: multiplication;
 };
 
-# subtraction{
+#subtraction{
     grid-area: subtraction;
 };
 
-# addition{
+#addition{
     grid-area: addition;
 };
 
-# equals{
+#equals{
     grid-area: equals;
 };
 
-# point{
+#point{
     grid-area: point;
 };
 
-# 9{
-    grid-area: 9;
+#nine{
+    grid-area: nine;
 };
 
-# 8{
-    grid-area: 8;
+#eight {
+    grid-area: eight;
 };
 
-# 7{
-    grid-area: 7;
+#seven {
+    grid-area: seven;
 };
 
-# 6{
-    grid-area: 6;
+#six {
+    grid-area: six;
 };
 
-# 5{
-    grid-area: 5;
+#five {
+    grid-area: five;
 };
 
-# 4{
-    grid-area: 4;
+#four {
+    grid-area: four;
 };
 
-# 3{
-    grid-area: 3;
+#three {
+    grid-area: three;
 };
 
-# 2{
-    grid-area: 2;
+#two {
+    grid-area: two;
 };
 
-# 1{
-    grid-area: 1;
+#one {
+    grid-area: one;
 };
 
-# 0{
-    grid-area: 0;
+#zero {
+    grid-area: zero0;
 };
 
 
