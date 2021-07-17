@@ -1,0 +1,103 @@
+body {
+    background-color:rgb(34, 33, 33);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas: ". . ."
+                         ". calculator ."
+                         ". . .";
+};
+
+#calculator {
+    grid-area: calculator;
+    width: 500px;
+    height: 750px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "display display display display"
+                         "allClear allClear plusMinus division"
+                         "7 8 9 multiplication"
+                         "4 5 6 subtraction"
+                         "1 2 3 addition"
+                         "0 0 point equals"
+};
+
+
+#display {
+    grid-area: display;
+};
+
+# allClear{
+    grid-area: allClear;
+};
+
+# plusMinus{
+    grid-area: plusMinus;
+};
+
+# division{
+    grid-area: division;
+};
+
+# multiplication{
+    grid-area: multiplication;
+};
+
+# subtraction{
+    grid-area: subtraction;
+};
+
+# addition{
+    grid-area: addition;
+};
+
+# equals{
+    grid-area: equals;
+};
+
+# point{
+    grid-area: point;
+};
+
+# 9{
+    grid-area: 9;
+};
+
+# 8{
+    grid-area: 8;
+};
+
+# 7{
+    grid-area: 7;
+};
+
+# 6{
+    grid-area: 6;
+};
+
+# 5{
+    grid-area: 5;
+};
+
+# 4{
+    grid-area: 4;
+};
+
+# 3{
+    grid-area: 3;
+};
+
+# 2{
+    grid-area: 2;
+};
+
+# 1{
+    grid-area: 1;
+};
+
+# 0{
+    grid-area: 0;
+};
+
+
