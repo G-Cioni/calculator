@@ -27,39 +27,39 @@ body {
     grid-area: display;
 };
 
-#allClear{
+#allClear {
     grid-area: allClear;
 };
 
-#plusMinus{
+#plusMinus {
     grid-area: plusMinus;
 };
 
-#division{
+#division {
     grid-area: division;
 };
 
-#multiplication{
+#multiplication {
     grid-area: multiplication;
 };
 
-#subtraction{
+#subtraction {
     grid-area: subtraction;
 };
 
-#addition{
+#addition {
     grid-area: addition;
 };
 
-#equals{
+#equals {
     grid-area: equals;
 };
 
-#point{
+#point {
     grid-area: point;
 };
 
-#nine{
+#nine {
     grid-area: nine;
 };
 
