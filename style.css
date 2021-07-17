@@ -1,5 +1,4 @@
 body {
-    background-color:rgb(34, 33, 33);
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr 2fr 1fr;
@@ -17,7 +16,7 @@ body {
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas: "display display display display"
                          "allClear allClear plusMinus division"
-                         "seve  eight nine multiplication"
+                         "seven  eight nine multiplication"
                          "four five six subtraction"
                          "one two three addition"
                          "zero0 zero0 point equals"
