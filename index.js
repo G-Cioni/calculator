@@ -1,11 +1,26 @@
 function btnInput(number) {
-    console.log(display.textContent);
     if (number == ".") {
         display.textContent += "."
     } else {
         (display.textContent === "0")? display.textContent = number : display.textContent += number;
 }
 };
+
+function btnOperator(operator) {
+    tempDisplay1 = parseInt(display.textContent);
+    display.textContent = ""
+    tempOperator = operator;
+}
+
+
+function clear() {
+    display.textContent = 0;
+    tempDisplay1 = 0;
+    tempDisplay2 = 0;
+    operator = "";
+}
+
+
 
 calculator = {
     operations: {
@@ -24,15 +39,30 @@ calculator = {
         division: function(a,b) {
             return a / b;
         },
+
+        equals: function(tempOperator,tempDisplay1) {
+            tempDisplay2 = parseInt(display.textContent);
+            console.log(tempDisplay1)
+            console.log(tempDisplay2)
+            console.log(tempOperator)
+
+            return calculator.operations.operate(tempOperator,tempDisplay1,tempDisplay2)
         
-        operate: function(operator, a, b) {
-            if (operator == "+") {
+        },
+        
+        operate: function(tempOperator, a, b) {
+            if (tempOperator == "+") {
+                console.log("hello")
+                display.textContent = this.addition(a,b);
                 return this.addition(a,b);
-            } else if (operator == "-") {
+            } else if (tempOperator == "-") {
+                display.textContent = this.subtraction(a,b)
                 return this.subtraction(a,b);
-            } else if (operator == "*") {
+            } else if (tempOperator == "*") {
+                display.textContent = this.multiplication(a,b)
                 return this.multiplication(a,b);
-            } else if (operator == "/") {
+            } else if (tempOperator == "/") {
+                display.textContent = this.division(a,b)
                 return this.division(a,b);
             } else {
                 return "ERROR";
@@ -42,7 +72,13 @@ calculator = {
 
 };
 
-let display = document.querySelector("#display")
+var tempDisplay1 = 0
+
+var tempDisplay2 = 0
+
+var tempOperator = 0
+
+var display = document.querySelector("#display")
 
 let allClearBtn = document.querySelector("#allClear")
 
@@ -56,7 +92,7 @@ let subtractionBtn = document.querySelector("#subtraction")
 
 let additionBtn = document.querySelector("#addition")
 
-let equals = document.querySelector("#equals")
+let equalsBtn = document.querySelector("#equals")
 
 let point = document.querySelector("#point")
 
@@ -79,7 +115,20 @@ let two = document.querySelector("#two")
 let one = document.querySelector("#one")
 
 
-allClearBtn.addEventListener("click", () => display.textContent = 0)
+allClearBtn.addEventListener("click", () => clear())
+
+// plusMinusBtn.addEventListener("click",)
+
+equalsBtn.addEventListener("click", () => calculator.operations.equals(tempOperator, tempDisplay1))
+
+divisionBtn.addEventListener("click", () => btnOperator("/"))
+
+multiplicationBtn.addEventListener("click", () => btnOperator("*"))
+
+additionBtn.addEventListener("click", () => btnOperator("+"))
+
+subtractionBtn.addEventListener("click", () => btnOperator("-"))
+
 
 zero.addEventListener("click", () => btnInput(0))
 
@@ -105,5 +154,12 @@ point.addEventListener("click", () => btnInput("."))
 
 
 
+//trying to get keyboard input to work. check javascript 30 drums on youtube.
+// window.addEventListener("keydown", function(e) {
+//     const btn = document.querySelector(`button[data-key="${e.keyCode}]`);
+//     console.log(`${e.keyCode}`)
+//     console.log(btn.textContent);
+//     if(!btn) return;
+// });
 
 
