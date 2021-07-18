@@ -33,6 +33,43 @@ calculator = {
 
 };
 
+let display = document.querySelector("#display")
+
+let allClearBtn = document.querySelector("#allClear")
+
+let plusMinusBtn = document.querySelector("#plusMinus")
+
+let divisionBtn = document.querySelector("#division")
+
+let multiplicationBtn = document.querySelector("#multiplication")
+
+let subtractionBtn = document.querySelector("#subtraction")
+
+let additionBtn = document.querySelector("#addition")
+
+let equals = document.querySelector("#equals")
+
+let point = document.querySelector("#point")
+
+let nine = document.querySelector("#nine")
+
+let eight = document.querySelector("#eight")
+
+let seven = document.querySelector("#seven")
+
+let six = document.querySelector("#six")
+
+let five = document.querySelector("#five")
+
+let four = document.querySelector("#four")
+
+let three = document.querySelector("#three")
+
+let two = document.querySelector("#two")
+
+let one = document.querySelector("#one")
+
+
 
 
 
