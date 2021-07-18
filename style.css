@@ -1,17 +1,21 @@
 body {
+    background-color: rgb(36, 36, 36);
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr 2fr 1fr;
     grid-template-areas: ". . ."
                          ". calculator ."
                          ". . .";
-};
+}
 
 #calculator {
     grid-area: calculator;
-    width: 500px;
-    height: 750px;
+    background-color: rgb(0, 0, 0);
+    width: 300px;
+    height: 500px;
+    box-shadow: 2px 2px 10px rgb(0, 0, 0);
     display: grid;
+    gap: 1px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas: "display display display display"
@@ -19,84 +23,109 @@ body {
                          "seven  eight nine multiplication"
                          "four five six subtraction"
                          "one two three addition"
-                         "zero0 zero0 point equals"
-};
+                         "zero zero point equals"
+}
 
+button {
+    font-family: Helvetica;
+    font-size: 22px;
+    font-weight: 550;
+    border-radius: 6px;
+    border: 1px solid
+}
+
+button:active {
+    background-color:rgb(0, 183, 255);
+}
+
+.operation {
+    background-color: rgb(39, 122, 218);
+}
+
+.number {
+    background-color: rgb(255, 123, 0);
+}
 
 #display {
     grid-area: display;
-};
+    font-size: 60px;
+    padding: 10px 10px 0px 10px;
+    border-radius: 6px;
+    border: 1px solid;
+    background-color: rgba(45, 154, 218, 0.801);
+    text-align: end;
+}
 
 #allClear {
     grid-area: allClear;
-};
+}
 
 #plusMinus {
     grid-area: plusMinus;
-};
+}
 
 #division {
     grid-area: division;
-};
+}
 
 #multiplication {
     grid-area: multiplication;
-};
+}
 
 #subtraction {
     grid-area: subtraction;
-};
+}
 
 #addition {
     grid-area: addition;
-};
+}
 
 #equals {
     grid-area: equals;
-};
+}
 
 #point {
     grid-area: point;
-};
+}
 
 #nine {
     grid-area: nine;
-};
+}
 
 #eight {
     grid-area: eight;
-};
+}
 
 #seven {
     grid-area: seven;
-};
+}
 
 #six {
     grid-area: six;
-};
+}
 
 #five {
     grid-area: five;
-};
+}
 
 #four {
     grid-area: four;
-};
+}
 
 #three {
     grid-area: three;
-};
+}
 
 #two {
     grid-area: two;
-};
+}
 
 #one {
     grid-area: one;
-};
+}
 
 #zero {
-    grid-area: zero0;
-};
+    grid-area: zero;
+}
 
 
