@@ -1,3 +1,12 @@
+function btnInput(number) {
+    console.log(display.textContent);
+    if (number == ".") {
+        display.textContent += "."
+    } else {
+        (display.textContent === "0")? display.textContent = number : display.textContent += number;
+}
+};
+
 calculator = {
     operations: {
         addition: function(a,b){
@@ -68,6 +77,31 @@ let three = document.querySelector("#three")
 let two = document.querySelector("#two")
 
 let one = document.querySelector("#one")
+
+
+allClearBtn.addEventListener("click", () => display.textContent = 0)
+
+zero.addEventListener("click", () => btnInput(0))
+
+one.addEventListener("click", () => btnInput(1))
+
+two.addEventListener("click", () => btnInput(2))
+
+three.addEventListener("click", () => btnInput(3))
+
+four.addEventListener("click", () => btnInput(4))
+
+five.addEventListener("click", () => btnInput(5))
+
+six.addEventListener("click", () => btnInput(6))
+
+seven.addEventListener("click", () => btnInput(7))
+
+eight.addEventListener("click", () => btnInput(8))
+
+nine.addEventListener("click", () => btnInput(9))
+
+point.addEventListener("click", () => btnInput("."))
 
 
 
