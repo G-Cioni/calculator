@@ -7,9 +7,11 @@ function btnInput(number) {
 };
 
 function btnOperator(operator) {
-    tempDisplay1 = parseInt(display.textContent);
+    if (display.textContent != 0){
+    tempDisplay1 = parseFloat(display.textContent);
     display.textContent = ""
     tempOperator = operator;
+}
 }
 
 
@@ -20,7 +22,9 @@ function clear() {
     operator = "";
 }
 
-
+function plusMinus() {
+    display.textContent = parseFloat(display.textContent) * -1;
+};
 
 calculator = {
     operations: {
@@ -41,7 +45,7 @@ calculator = {
         },
 
         equals: function(tempOperator,tempDisplay1) {
-            tempDisplay2 = parseInt(display.textContent);
+            tempDisplay2 = parseFloat(display.textContent);
             console.log(tempDisplay1)
             console.log(tempDisplay2)
             console.log(tempOperator)
@@ -117,8 +121,6 @@ let one = document.querySelector("#one")
 
 allClearBtn.addEventListener("click", () => clear())
 
-// plusMinusBtn.addEventListener("click",)
-
 equalsBtn.addEventListener("click", () => calculator.operations.equals(tempOperator, tempDisplay1))
 
 divisionBtn.addEventListener("click", () => btnOperator("/"))
@@ -129,6 +131,7 @@ additionBtn.addEventListener("click", () => btnOperator("+"))
 
 subtractionBtn.addEventListener("click", () => btnOperator("-"))
 
+plusMinusBtn.addEventListener("click", () => plusMinus())
 
 zero.addEventListener("click", () => btnInput(0))
 
