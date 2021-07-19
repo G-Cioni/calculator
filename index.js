@@ -26,6 +26,8 @@ subtractionBtn.addEventListener("click", () => calculator.functions.operation("-
 
 plusMinusBtn.addEventListener("click", () => calculator.functions.plusMinus())
 
+deleteBtn.addEventListener("click", () => calculator.functions.delete(display.textContent))
+
 zero.addEventListener("click", () => calculator.functions.displayInput(0))
 
 one.addEventListener("click", () => calculator.functions.displayInput(1))
@@ -126,7 +128,7 @@ calculator = {
             firstOperand = parseFloat(display.textContent);
             (display.textContent != result) ? display.textContent = "" : display.textContent != result
             tempOperator = operator;
-        };
+            };
         },
         displayInput: function(number) {
             if (display.textContent == result) {
@@ -138,7 +140,7 @@ calculator = {
                 };
             } else {
                 (display.textContent === "0")? display.textContent = number : display.textContent += number;
-        }
+            }
         },
         displayMaxLength: function() {
             if (display.textContent.length > 10 && !display.textContent.includes(".")) {
@@ -146,6 +148,9 @@ calculator = {
             } else {
                display.textContent = Math.round(display.textContent*100000) / 100000
             }
+        },
+        delete: function(displayValue) {
+            display.textContent = displayValue.slice(0, display.textContent.length - 1);
         },
     }
 };

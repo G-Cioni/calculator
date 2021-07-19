@@ -19,7 +19,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas: "display display display display"
-                         "allClear allClear plusMinus division"
+                         "allClear delete plusMinus division"
                          "seven  eight nine multiplication"
                          "four five six subtraction"
                          "one two three addition"
@@ -28,7 +28,7 @@ body {
 
 button {
     font-family: Helvetica;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 550;
     border-radius: 6px;
     border: 1px solid;
@@ -63,6 +63,11 @@ button:active {
 
 #allClearBtn {
     grid-area: allClear;
+}
+
+#deleteBtn {
+    grid-area: delete;
+    font-size: 1.25rem;
 }
 
 #plusMinusBtn {
