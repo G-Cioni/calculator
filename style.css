@@ -16,7 +16,7 @@ body {
     box-shadow: 3px 3px 10px rgb(0, 0, 0);
     display: grid;
     gap: .4em;
-    padding: 1em;
+    padding: .5em;
     border: .5em solid rgba(40, 163, 172, 0.644);
     border-radius: 10px;
     grid-template-columns: repeat(4, 1fr);
@@ -59,7 +59,7 @@ button:active {
     grid-area: display;
     font-size: 3.8rem;
     padding-right: .25em;
-    margin-bottom: .09em;
+    margin-bottom: .03em;
     border-radius: .14em;
     border: 0px solid;
     color: rgba(255, 255, 255, 0.829);
