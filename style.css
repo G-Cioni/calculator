@@ -139,7 +139,7 @@ button:active {
         display: grid;
         grid-template-rows: 0.2fr .7fr 0.1fr;
         grid-template-areas: ". . ."
-                             ". calculator ."
+                             "calculator calculator calculator"
                              ". . .";                      
     }
 
