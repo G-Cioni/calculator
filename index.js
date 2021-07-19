@@ -6,6 +6,8 @@ let secondOperand = 0
 
 let tempOperator = 0
 
+let result = 0
+
 let display = document.querySelector("#display")
 
 // Give each button a function
@@ -72,15 +74,19 @@ calculator = {
         operate: function(tempOperator, a, b) {
             if (tempOperator == "+") {
                 display.textContent = this.addition(a,b);
+                result = this.addition(a,b);
                 calculator.functions.displayMaxLength();
             } else if (tempOperator == "-") {
                 display.textContent = this.subtraction(a,b)
+                result = this.subtraction(a,b);
                 calculator.functions.displayMaxLength();
             } else if (tempOperator == "*") {
                 display.textContent = this.multiplication(a,b)
+                result = this.multiplication(a,b);
                 calculator.functions.displayMaxLength();
             } else if (tempOperator == "/") {
                 display.textContent = this.division(a,b)
+                result = this.division(a,b);
                 calculator.functions.displayMaxLength();
             } else {
                 return "ERROR";
@@ -99,26 +105,38 @@ calculator = {
             firstOperand = 0;
             secondOperand = 0;
             operator = "";
+            result = 0;
         },
         operation: function(operator) {
+            if (firstOperand != 0) {
+                calculator.operations.equals(tempOperator, firstOperand);
+                firstOperand = display.textContent;
+                display.textContent = result
+            };
             if (display.textContent != 0){
             firstOperand = parseFloat(display.textContent);
-            display.textContent = ""
+            (display.textContent != result) ? display.textContent = "" : display.textContent != result
             tempOperator = operator;
         };
         },
         displayInput: function(number) {
+            if (display.textContent == result) {
+                display.textContent = "";
+            }
             if (number == ".") {
-                display.textContent += "."
+                if (!display.textContent.includes(".")) {
+                    display.textContent += ".";
+                };
             } else {
                 (display.textContent === "0")? display.textContent = number : display.textContent += number;
         }
         },
         displayMaxLength: function() {
-            if (display.textContent.length > 10) {
-                console.log(display.textContent)
+            if (display.textContent.length > 10 && !display.textContent.includes(".")) {
                 return display.textContent = "ERROR"
-            };
+            } else {
+               display.textContent = Math.round(display.textContent*100000) / 100000
+            }
         },
     }
 };
