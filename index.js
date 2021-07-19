@@ -68,7 +68,9 @@ calculator = {
             return a / b;
         },
         equals: function(tempOperator,firstOperand) {
-            secondOperand = parseFloat(display.textContent);
+            if (display.textContent != result) {
+                secondOperand = parseFloat(display.textContent);
+            }
             return calculator.operations.operate(tempOperator,firstOperand,secondOperand)
         },      
         operate: function(tempOperator, a, b) {
@@ -110,7 +112,6 @@ calculator = {
         operation: function(operator) {
             if (firstOperand != 0) {
                 calculator.operations.equals(tempOperator, firstOperand);
-                firstOperand = display.textContent;
                 display.textContent = result
             };
             if (display.textContent != 0){
