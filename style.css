@@ -59,6 +59,8 @@ button:active {
     overflow: hidden;
 }
 
+/* Defining grid area for all buttons */
+
 #allClearBtn {
     grid-area: allClear;
 }
