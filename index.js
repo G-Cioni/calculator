@@ -65,7 +65,11 @@ calculator = {
             return a * b;
         },     
         division: function(a,b) {
-            return a / b;
+            if (b == 0) {
+                return "ERROR"
+            } else {
+                return a / b;
+            }
         },
         equals: function(tempOperator,firstOperand) {
             if (display.textContent != result) {
@@ -75,20 +79,24 @@ calculator = {
         },      
         operate: function(tempOperator, a, b) {
             if (tempOperator == "+") {
-                display.textContent = this.addition(a,b);
                 result = this.addition(a,b);
+                display.textContent = result;
                 calculator.functions.displayMaxLength();
             } else if (tempOperator == "-") {
-                display.textContent = this.subtraction(a,b)
                 result = this.subtraction(a,b);
+                display.textContent = result;
                 calculator.functions.displayMaxLength();
             } else if (tempOperator == "*") {
-                display.textContent = this.multiplication(a,b)
                 result = this.multiplication(a,b);
+                display.textContent = result;
                 calculator.functions.displayMaxLength();
             } else if (tempOperator == "/") {
-                display.textContent = this.division(a,b)
                 result = this.division(a,b);
+                if (typeof result == "number") {
+                    display.textContent = result;
+                } else {
+                    return display.textContent = "ERROR"
+                }
                 calculator.functions.displayMaxLength();
             } else {
                 return "ERROR";
