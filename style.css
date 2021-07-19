@@ -141,5 +141,6 @@ button:active {
         grid-template-areas: ". . ."
                              ". calculator ."
                              ". . ."; 
+        max-height: 1vw;
     }
 }
