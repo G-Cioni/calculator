@@ -155,12 +155,38 @@ calculator = {
     }
 };
 
-//trying to get keyboard input to work. check javascript 30 drums on youtube.
-// window.addEventListener("keydown", function(e) {
-//     const btn = document.querySelector(`button[data-key="${e.keyCode}]`);
-//     console.log(`${e.keyCode}`)
-//     console.log(btn.textContent);
-//     if(!btn) return;
-// });
+// NumPad compatibility
+
+window.addEventListener("keydown", function(e) {
+    let num = e.keyCode;
+    switch (true) {
+        case (num == 111):
+            calculator.functions.operation("/")
+            break;
+        case (num == 106):
+            calculator.functions.operation("*")
+            break;
+        case (num == 109):
+            calculator.functions.operation("-")
+            break;
+        case (num == 107):
+            calculator.functions.operation("+")
+            break;
+        case (num == 13):
+            calculator.operations.equals(tempOperator, firstOperand)
+            break;
+        case (num == 27):
+            calculator.functions.allClear()
+            break;
+        case (num == 8):
+            calculator.functions.delete(display.textContent)
+            break;
+        default:
+            const button = document.querySelector(`button[data-key="${num}"]`);
+            calculator.functions.displayInput(button.textContent)
+            console.log(`${e.keyCode}`)
+            if (!button) return;
+            }
+});
 
 
