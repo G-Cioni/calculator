@@ -52,7 +52,7 @@ button:active {
 }
 
 .number {
-    background-color: rgb(255, 123, 0);
+    background-color: rgba(255, 123, 0, 0.76);
 }
 
 #display {
