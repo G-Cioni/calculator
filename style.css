@@ -35,7 +35,7 @@ button {
     font-weight: 550;
     border-radius: .4em;
     border: 0em ;
-    color: rgb(27, 27, 27);
+    color: rgba(255, 255, 255, 0.829);
 }
 
 button:active {
@@ -59,7 +59,7 @@ button:active {
     grid-area: display;
     font-size: 3.8rem;
     padding-right: .25em;
-    margin-bottom: .03em;
+    margin-bottom: .06em;
     border-radius: .14em;
     border: 0px solid;
     color: rgba(255, 255, 255, 0.829);
