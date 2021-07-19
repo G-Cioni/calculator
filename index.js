@@ -184,8 +184,6 @@ window.addEventListener("keydown", function(e) {
         default:
             const button = document.querySelector(`button[data-key="${num}"]`);
             calculator.functions.displayInput(button.textContent)
-            console.log(`${e.keyCode}`)
-            if (!button) return;
             }
 });
 
