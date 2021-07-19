@@ -48,6 +48,7 @@ button:active {
 
 .operation {
     background-color: rgb(39, 122, 218);
+    font-size: 1.5em;
 }
 
 .number {
