@@ -65,9 +65,13 @@ button:active {
     color: rgba(255, 255, 255, 0.829);
     background-color: rgba(45, 218, 218, 0.527);
     text-align: end;
+    align-content: center;
     overflow: hidden;
 }
 
+span {
+    vertical-align: center;
+}
 /* Defining grid area for all buttons */
 
 #allClearBtn {

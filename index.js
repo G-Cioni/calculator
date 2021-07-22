@@ -91,6 +91,7 @@ calculator = {
             } else if (tempOperator == "*") {
                 result = this.multiplication(a,b);
                 display.textContent = result;
+                console.log(result);
                 calculator.functions.displayMaxLength();
             } else if (tempOperator == "/") {
                 result = this.division(a,b);
@@ -122,7 +123,6 @@ calculator = {
         operation: function(operator) {
             if (firstOperand != 0) {
                 calculator.operations.equals(tempOperator, firstOperand);
-                display.textContent = result
             };
             if (display.textContent != 0){
             firstOperand = parseFloat(display.textContent);
@@ -143,11 +143,32 @@ calculator = {
             }
         },
         displayMaxLength: function() {
-            if (display.textContent.length > 10 && !display.textContent.includes(".")) {
-                return display.textContent = "ERROR"
-            } else {
-               display.textContent = Math.round(display.textContent*100000) / 100000
+
+            display.textContent = Math.round(display.textContent*100000) / 100000
+
+            switch (true) {
+                case (display.textContent.length < 11):
+                    display.style.fontSize = "3.8rem";
+                    break;
+                case (display.textContent.length < 12):
+                    display.style.fontSize = "3.5rem";
+                    break;
+                case (display.textContent.length < 14):
+                    display.style.fontSize = "3.3rem";
+                    break;
+                case (display.textContent.length < 15):
+                    display.style.fontSize = "3rem";
+                    break;
+                case (display.textContent.length > 16):
+                    result = "ERROR"
+                    display.textContent = result;
+                    console.log(display.textContent);
+                    console.log(result);
+                    break;
+
             }
+
+
         },
         delete: function(displayValue) {
             display.textContent = displayValue.slice(0, display.textContent.length - 1);
