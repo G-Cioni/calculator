@@ -133,8 +133,7 @@ calculator = {
         displayInput: function(number) {
             if (display.textContent == result) {
                 display.textContent = "";
-            }
-            if (number == ".") {
+            } else if (number == ".") {
                 if (!display.textContent.includes(".")) {
                     display.textContent += ".";
                 };
@@ -143,10 +142,25 @@ calculator = {
             }
         },
         displayMaxLength: function() {
-            if (display.textContent.length > 10 && !display.textContent.includes(".")) {
-                return display.textContent = "ERROR"
-            } else {
-               display.textContent = Math.round(display.textContent*100000) / 100000
+
+            display.textContent = Math.round(display.textContent*100000) / 100000
+
+            switch (true) {
+                case (display.textContent.length < 11):
+                    display.style.fontSize = "3.8rem":
+                    break;
+                case (display.textContent.length > 11):
+                    display.style.fontSize = "3.8rem":
+                    break;
+                case (display.textContent.length > 12):
+                    display.style.fontSize = "3.8rem":
+                    break;
+                case (display.textContent.length > 14):
+                    display.style.fontSize = "3.8rem":
+                    break;
+                case (display.textContent.length > 16):
+                    display.textContent = "ERROR":
+                    break;
             }
         },
         delete: function(displayValue) {
@@ -186,5 +200,4 @@ window.addEventListener("keydown", function(e) {
             calculator.functions.displayInput(button.textContent)
             }
 });
-
 
