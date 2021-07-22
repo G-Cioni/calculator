@@ -131,10 +131,9 @@ calculator = {
             };
         },
         displayInput: function(number) {
-            if (display.textContent == result) {
+            if (display.textContent == result && result != 0) {
                 display.textContent = "";
-            }
-            if (number == ".") {
+            } else if (number == ".") {
                 if (!display.textContent.includes(".")) {
                     display.textContent += ".";
                 };
@@ -143,7 +142,7 @@ calculator = {
             }
         },
         displayMaxLength: function() {
-            if (display.textContent.length > 10 && !display.textContent.includes(".")) {
+            if (display.textContent.length > 10) {
                 return display.textContent = "ERROR"
             } else {
                display.textContent = Math.round(display.textContent*100000) / 100000
