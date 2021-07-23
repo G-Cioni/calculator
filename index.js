@@ -131,7 +131,7 @@ calculator = {
             };
         },
         displayInput: function(number) {
-            if (display.textContent == result) {
+            if (display.textContent == result && result != 0) {
                 display.textContent = "";
             }
             if (number == ".") {
