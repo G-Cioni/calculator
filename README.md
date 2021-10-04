@@ -1,3 +1,3 @@
 # calculator
 
-https://gianluca-cioni.github.io/calculator/
+https://gianlucacioni.github.io/calculator/
